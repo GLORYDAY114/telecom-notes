@@ -1,0 +1,36 @@
+Recorded on 2026-11-11 (Asia/Shanghai)
+Environment: Windows, Python 3.13.3, pycrate 0.8.1
+
+Command: python -m unittest discover -s tests -v
+
+test_fixed_vectors_decode_and_rebuild ... ok
+test_known_seven_septet_padding ... ok
+test_literal_at_sign_and_carriage_return ... ok
+test_reference_and_even_length_address ... ok
+test_reject_dangling_gsm_escape ... ok
+test_reject_invalid_address_padding ... ok
+test_reject_non_bmp_ucs2 ... ok
+test_reject_truncated_or_extra_payload ... ok
+test_reject_unsupported_flags_and_dcs ... ok
+test_reject_wrong_udl ... ok
+test_single_part_boundaries ... ok
+
+Ran 11 tests in 0.063s
+OK
+
+Command: python sms_lab.py
+
+[gsm7] 'hellohello' -> +12025550123
+  DCS=00; TP-UDL=10 septets; TP-UD=9 octets
+  PDU: 0001000B912120550521F300000AE8329BFD4697D9EC37
+  Object round-trip: PASS; semantic rebuild: PASS
+[extension] '^' -> +12025550123
+  DCS=00; TP-UDL=2 septets; TP-UD=2 octets
+  PDU: 0001000B912120550521F30000021B0A
+  Object round-trip: PASS; semantic rebuild: PASS
+[ucs2] '你好' -> +12025550123
+  DCS=08; TP-UDL=4 octets; TP-UD=4 octets
+  PDU: 0001000B912120550521F30008044F60597D
+  Object round-trip: PASS; semantic rebuild: PASS
+
+This file records the local run. See GitHub Actions for current remote checks.

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "gsm7",
+    "description": "GSM 7-bit basic alphabet: ten septets packed into nine octets",
+    "pdu_hex": "0001000B912120550521F300000AE8329BFD4697D9EC37",
+    "recipient": "+12025550123",
+    "text": "hellohello",
+    "alphabet": "gsm7",
+    "udl": 10,
+    "ud_octets": 9
+  },
+  {
+    "name": "extension",
+    "description": "One visible character, two septets: ESC 0x1B followed by 0x14",
+    "pdu_hex": "0001000B912120550521F30000021B0A",
+    "recipient": "+12025550123",
+    "text": "^",
+    "alphabet": "gsm7",
+    "udl": 2,
+    "ud_octets": 2
+  },
+  {
+    "name": "ucs2",
+    "description": "Two BMP characters encoded as four big-endian octets",
+    "pdu_hex": "0001000B912120550521F30008044F60597D",
+    "recipient": "+12025550123",
+    "text": "你好",
+    "alphabet": "ucs2",
+    "udl": 4,
+    "ud_octets": 4
+  }
+]
